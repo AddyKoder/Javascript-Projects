@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="left.css">
+    <link rel="stylesheet" href="right.css">
+
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <div id="web_nav">
+
+            <h1 id="website_name">Library Manager</h1>
+
+            <div id="user_info">
+                <span id="user_name" style="font-size: 20px;">Aditya</span>
+                <span id="user_library">@ Kolkata National Library</span>
+            </div>
+
+        </div>
+
+
+        <div id="message_pane">
+            <span id="message">
+                Messages will appear here...
+            </span>
+            <span id="github_link" onclick="location.href='https://github.com/AddyKoder'">
+                © Aditya
+            </span>
+        </div>
+
+    </header>
+
+
+    <div id="main">
+
+
+        <div id="left_pane">
+            <div id="left_nav">
+                <h3 class="heading" style="font-size: 40px;">All books</h3>
+
+                <div id="search">
+                    <input type="text" name="" id="search_input" placeholder="Search">
+                    <input type="button" value=" " id="clear_search">
+                </div>
+            </div>
+
+            <div id="books_info_header">
+                <span class="table_heading">
+                    Id
+                </span>
+
+                <span class="table_heading"
+                    style="width: 350px;border-left: 1px solid rgb(216, 216, 216); padding-left: 15px;">
+                    Name
+                </span>
+
+                <span class="table_heading"
+                    style="width: 150px;border-left: 1px solid rgb(216, 216, 216); padding-left: 15px;">
+                    Status
+                </span>
+
+            </div>
+
+            <div id="books_pane">
+
+                <div class="book">
+                    <span>37</span>
+                    <span style="width: 350px;">Harry Potter</span>
+                    <span style="width: 150px;">Available</span>
+                </div>
+
+                <div class="book">
+                    <span>37</span>
+                    <span style="width: 350px;">Harry Potter</span>
+                    <span style="width: 150px;">Available</span>
+                </div>
+
+                <div class="book">
+                    <span>37</span>
+                    <span style="width: 350px;">Harry Potter</span>
+                    <span style="width: 150px;">Available</span>
+                </div>
+
+
+
+            </div>
+
+            <div id="books_buttons">
+                <span style="width: 237px; font-family: cursive;">456 books</span>
+                <input type="button" value="+10 Books" style="width: 237px; height: 35px;">
+                <input type="button" value="Clear Library" style="width: 237px; height: 35px;">
+
+            </div>
+        </div>
+
+        <div id="right_pane">
+            <div id="top_pane">
+
+                <div id="top_nav">
+
+                    <h3 class="heading" style="font-size: 40px; color: rgb(68, 68, 68); ">Book Title: The Dawn the man
+                        who never told a truth</h3>
+                    <span id="status">Available</spani>
+                </div>
+
+                <div id="about_book">
+
+                    <div id="book_info">
+
+
+                        
+                        <!-- <span>ID : 37</span>
+                        <span>Author : Wicter Muntro Roy</span>
+                        <span>Pages : 899</span>
+                        <span>Prise : 49$</span>
+                        <span>Type : Fiction</span>
+                        <span>Date Added : 26 January</span> -->
+                        <!-- <div id="col1">
+                            <div class="info">
+                                <div class="type">ID</div>
+                                <div class="value">37</div>
+                            </div>
+
+
+                            <div class="info">
+                                <span class="type">Pages</span><span class="value">899</span>
+                            </div>
+
+                            <div class="info">
+                                <span class="type">Price</span><span class="value">$49</span>
+                            </div>
+                        </div>
+
+
+                        <div id="col2">
+                            <div class="info">
+                                <span class="type">Author</span><span class="value">Wictor Munro Roy</span>
+                            </div>
+
+                            <div class="info">
+                                <span class="type">Type</span><span class="value">Fictional</span>
+                            </div>
+
+                            <div class="info">
+                                <span class="type">Date Added</span><span class="value">26 January</span>
+                            </div>
+                        </div> -->
+
+                    </div>
+
+                    <div id="book_operations">
+                        <div id="buttons">
+                            <input type="button" value="Borrow">
+                            <input type="button" value="Remove">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div id="bottom_pane">
+                <h3 class="heading">
+                    Add book
+                </h3>
+
+                <div id="add_book_form">
+
+                    <input type="text" name="" id="enter_name" placeholder="Name">
+                    <input type="text" name="" id="enter_author" placeholder="Author">
+                    <input type="number" name="" id="enter_page" placeholder="Page">
+                    <input type="number" name="" id="enter_prise" placeholder="Prise in $">
+                    <input type="text" name="" id="enter Type" placeholder="Type">
+
+                    <input type="button" value="ADD" id="add_book">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
