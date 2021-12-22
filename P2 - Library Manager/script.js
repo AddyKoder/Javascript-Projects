@@ -1,10 +1,14 @@
+// todo's
 
+// 1 - adding the filter functionality
 
-
+let timeout;
 let active_book;
 
 function notify(msg, color = 0, bgcolor = 0) {
     // This funtion modifies the content inside the message panel to notify the user about an event, Success or Failure
+    
+    clearTimeout(timeout)
 
     message.innerText = msg;
 
@@ -16,11 +20,14 @@ function notify(msg, color = 0, bgcolor = 0) {
         message_pane.style.backgroundColor = bgcolor;
     }
 
-    setTimeout(() => {
+    timeout = setTimeout(() => {
         message.innerText = '...';
         message_pane.style.color = 'rgb(117, 117, 117)';
         message_pane.style.backgroundColor = 'rgb(241, 241, 241)';
     }, 3000)
+
+    
+
 }
 
 function cancel_add_book() {
