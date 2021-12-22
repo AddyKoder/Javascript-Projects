@@ -55,7 +55,7 @@
 
 #books_pane{
     margin: 20px 0px;
-    max-height: 450px;
+    height: 450px;
     overflow-y: scroll;
     background-color: white;
 }
