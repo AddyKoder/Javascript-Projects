@@ -52,9 +52,6 @@
     padding: 3px 28px;
     font-size: 20px;
 }
-.book:hover{
-    cursor: pointer;
-}
 
 #books_pane{
     margin: 20px 0px;
@@ -68,8 +65,14 @@
     /* background-color: rgb(222, 251, 255); */
 }
 
+.book:hover{
+    cursor: pointer;
+    background-color: rgba(0, 177, 201, 0.336) !important;
+    /* border-left: 6px solid var(--theme_color); */
+    
+}
 #books_pane::-webkit-scrollbar{
-    display: none;
+    /* display: none; */
 }
 
 #books_buttons{
