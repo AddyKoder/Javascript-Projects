@@ -76,6 +76,7 @@ function add_book() {
     }
 
 
+    
     if (validate(book_name) && validate(book_author) && validate(book_page) && validate(book_price) && validate(book_type) && Number(book_page)<10000 && Number(book_price)<100) {
         
         book = {
@@ -101,8 +102,12 @@ function add_book() {
         enter_price.value = '';
         enter_type.value = '';
         notify("Success : Book successfully added to the database", 'green', 'rgba(65, 255, 122, 0.44)')
+
+        
         plot_books()
-        // setTimeout(plot_books,1)
+
+        // setTimeout(plot_books,0)
+        
 
     }
 
@@ -169,61 +174,80 @@ function add_10_books(){
     
 function plot_books(){
 
+    setTimeout(() => {
+        function sort_keys(arr){
 
-    function sort_keys(arr){
-        new_arr = []
-        for(x of arr){
-            if (x != 'next_index'){
-                new_arr.push(Number(x))
-
-            }
-        }
-        new_new_arr=[]
         
-        for(i of new_arr.sort(function(a, b) {
-            return a - b;
-          })
-          ){
-            new_new_arr.push(String(i))
-        }
-        return new_new_arr
-    }
 
+            new_arr = []
+            for(x of arr){
+                if (x != 'next_index'){
+                    new_arr.push(Number(x))
     
-
-    books_pane.innerHTML = ''
-    keys = Object.keys(localStorage)
-
-    for(key of sort_keys(keys)){
-
-            if(JSON.parse(localStorage.getItem(key)).status != 'available'){
-                bcolor = 'rgba(49, 49, 49, 0.3)';
-                color = 'black'
+                }
             }
-            else{
-                bcolor = 'rgb(214, 255, 214)';
-                color = 'green'
+            new_new_arr=[]
+            
+            for(i of new_arr.sort(function(a, b) {
+                return a - b;
+              })
+              ){
+                new_new_arr.push(String(i))
             }
-            
-            books_pane.innerHTML = books_pane.innerHTML + 
-            `
-            <div class="book">
-                    <span id="${key}" class = "id" style="width: 50px;text-align:center;">${key}</span>
-                    <span style="width: 400px; font-weight: 700; opacity: 75%;">${JSON.parse(localStorage.getItem(key)).name}</span>
-                    <span
-                        style="width: 120px; color: ${color}; font-weight: 700; border-radius: 5px; background-color: ${bcolor}; text-align: center;">${JSON.parse(localStorage.getItem(key)).status}</span>
-                        
-                </div>
-            
-            
-            `
-            
+            return new_new_arr
+        }
+    
+        
+    
+        books_pane.innerHTML = ''
+        let newHTML = ''
+        keys = Object.keys(localStorage)
         
         
-    }
+        
+        new_keys = sort_keys(keys)
+        for(key of new_keys){
+                book_obj = JSON.parse(localStorage.getItem(key))
 
-    total_books.innerHTML = `${sort_keys(keys).length} books`
-    add_click_listeners()
+                if(book_obj.status != 'available'){
+                    bcolor = 'rgba(49, 49, 49, 0.3)';
+                    color = 'black'
+                }
+                else{
+                    bcolor = 'rgb(214, 255, 214)';
+                    color = 'green'
+                }
+                
+                newHTML = newHTML + 
+                `
+                <div class="book">
+                        <span id="${key}" class = "id" style="width: 50px;text-align:center;">${key}</span>
+                        <span style="width: 400px; font-weight: 700; opacity: 75%;">${book_obj.name}</span>
+                        <span
+                            style="width: 120px; color: ${color}; font-weight: 700; border-radius: 5px; background-color: ${bcolor}; text-align: center;">${book_obj.status}</span>
+                            
+                    </div>
+                
+                
+                `
+                
+            
+            
+            }
+            
+            books_pane.innerHTML = newHTML;
+        
+
+        
+        
+        total_books.innerHTML = `${sort_keys(keys).length} books`
+        
+        add_click_listeners()
+        
+
+
+    }, 1);
+    
 
 }
 
@@ -397,12 +421,6 @@ function filter(){
         
     }
 }
-
-
-    
-    
-    
-
 
 
 plot_books()
