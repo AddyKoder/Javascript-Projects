@@ -72,9 +72,7 @@
     /* border-left: 6px solid var(--theme_color); */
     
 }
-#books_pane::-webkit-scrollbar{
-    /* display: none; */
-}
+
 
 #books_buttons{
     display: flex;
