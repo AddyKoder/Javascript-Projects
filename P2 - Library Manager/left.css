@@ -58,6 +58,7 @@
     height: 450px;
     overflow-y: scroll;
     background-color: white;
+    scroll-behavior: smooth;
 }
 
 #books_pane div:nth-child(even){

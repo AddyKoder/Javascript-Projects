@@ -77,7 +77,7 @@ function add_book() {
 
 
     
-    if (validate(book_name) && validate(book_author) && validate(book_page) && validate(book_price) && validate(book_type) && Number(book_page)<10000 && Number(book_price)<100) {
+    if (validate(book_name) && validate(book_author) && validate(book_page) && validate(book_price) && validate(book_type) && Number(book_page)<10000 && Number(book_price)<1000) {
         
         book = {
             'id':n_index,
@@ -106,8 +106,10 @@ function add_book() {
         
         plot_books()
 
-        // setTimeout(plot_books,0)
-        
+        setTimeout(() => {
+            document.getElementById(Number(n_index)-2).scrollIntoView();
+            
+        }, 100);        
 
     }
 
@@ -169,6 +171,12 @@ function add_10_books(){
 
         notify("Success : 10 Sample Books were successfully added to the database", 'green', 'rgba(65, 255, 122, 0.44)')
         plot_books()
+
+        setTimeout(() => {
+            document.getElementById(Number(n_index)-11).scrollIntoView();
+            
+        }, 100);
+
 
 }
     
@@ -273,6 +281,8 @@ function clear_library(){
 
 function ret_func(id){
     return function(){
+
+        
         
         this_book = JSON.parse(localStorage.getItem(id));
         active_book = this_book;        
@@ -281,6 +291,8 @@ function ret_func(id){
         
 
         document.getElementById("status").innerText = this_book.status;
+
+        
 
         name_value.innerText  = this_book.name;
         author_value.innerText  = this_book.author;
@@ -412,15 +424,16 @@ function borrow_return_active(){
 
 function clear_search(){
     search_input.value = '';
-    filter()
+    plot_books()
 }
 
 function filter(){
     search_value = search_input.value;
     if (search_value.replaceAll(' ','')!=''){
+        console.log('search');
         
     }
 }
 
-
+books_pane.scroll(999,0)
 plot_books()
