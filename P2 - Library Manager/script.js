@@ -1,7 +1,3 @@
-// todo's
-
-// 1 - adding the filter functionality
-
 let timeout;
 let active_book;
 
@@ -106,8 +102,11 @@ function add_book() {
         
         plot_books()
 
+        
         setTimeout(() => {
-            document.getElementById(Number(n_index)-2).scrollIntoView();
+
+            try{
+            document.getElementById(Number(n_index)-2).scrollIntoView();}catch(e){}
             
         }, 100);        
 
@@ -173,37 +172,41 @@ function add_10_books(){
         plot_books()
 
         setTimeout(() => {
-            document.getElementById(Number(n_index)-11).scrollIntoView();
+            try{
+            document.getElementById(Number(n_index)-11).scrollIntoView();}catch(e){}
             
         }, 100);
 
 
 }
     
-function plot_books(keys = Object.keys(localStorage)){
-
-    setTimeout(() => {
-        function sort_keys(arr){
+function sort_keys(arr){
 
         
 
-            new_arr = []
-            for(x of arr){
-                if (x != 'next_index'){
-                    new_arr.push(Number(x))
-    
-                }
-            }
-            new_new_arr=[]
-            
-            for(i of new_arr.sort(function(a, b) {
-                return a - b;
-              })
-              ){
-                new_new_arr.push(String(i))
-            }
-            return new_new_arr
+    new_arr = []
+    for(x of arr){
+        if (x != 'next_index'){
+            new_arr.push(Number(x))
+
         }
+    }
+    new_new_arr=[]
+    
+    for(i of new_arr.sort(function(a, b) {
+        return a - b;
+      })
+      ){
+        new_new_arr.push(String(i))
+    }
+    return new_new_arr
+
+}
+
+function plot_books(keys = Object.keys(localStorage)){
+
+    setTimeout(() => {
+        
     
         
     
@@ -248,7 +251,7 @@ function plot_books(keys = Object.keys(localStorage)){
 
         
         
-        total_books.innerHTML = `${sort_keys(keys).length} books`
+        total_books.innerHTML = `${sort_keys(keys).length}/${Object.keys(localStorage).length-1} books`
         
         add_click_listeners()
         
@@ -262,6 +265,7 @@ function plot_books(keys = Object.keys(localStorage)){
 function clear_library(){
     if(confirm('This action will DELETE all the books in the database. Do you still want to continue ?')){
     localStorage.clear()
+    localStorage.setItem('next_index','1');
     plot_books()
     document.getElementById("status").innerText = '...';
 
@@ -430,8 +434,27 @@ function clear_search(){
 function filter(){
     search_value = search_input.value;
     if (search_value.replaceAll(' ','')!=''){
-        console.log('search');
+
+        keys = sort_keys(Object.keys(localStorage))
+        to_remove=[]
         
+        to_show  = []
+
+        for (x of keys){
+            book = JSON.parse(localStorage.getItem(x));
+            
+            if(book['name'].includes(search_value) || book['id'].includes(search_value)){
+                to_show.push(x)
+            }
+            
+        }
+        
+        plot_books(to_show)
+
+    }
+    else{
+        plot_books()
+
     }
 }
 
