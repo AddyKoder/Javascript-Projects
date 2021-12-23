@@ -180,7 +180,7 @@ function add_10_books(){
 
 }
     
-function plot_books(){
+function plot_books(keys = Object.keys(localStorage)){
 
     setTimeout(() => {
         function sort_keys(arr){
@@ -209,7 +209,7 @@ function plot_books(){
     
         books_pane.innerHTML = ''
         let newHTML = ''
-        keys = Object.keys(localStorage)
+        
         
         
         
