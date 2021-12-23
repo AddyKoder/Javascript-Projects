@@ -435,5 +435,4 @@ function filter(){
     }
 }
 
-books_pane.scroll(999,0)
 plot_books()
