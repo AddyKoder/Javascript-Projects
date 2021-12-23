@@ -254,7 +254,7 @@ function plot_books(keys = Object.keys(localStorage)) {
 
 
 
-        total_books.innerHTML = `${sort_keys(keys).length}/${Object.keys(localStorage).length - 1} books`
+        total_books.innerHTML = `${sort_keys(keys).length}/${Object.keys(localStorage).length - 1}&nbsp &nbsp books`
 
         add_click_listeners()
 
