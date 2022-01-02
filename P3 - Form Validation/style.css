@@ -1,0 +1,83 @@
+body{
+    margin-top: 20px;
+}
+
+#page{
+    width: 55vw;
+    margin:auto;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#signup{
+    font-family: sans-serif;
+    color: rgb(0, 214, 0);
+    font-weight: 700;
+    font-size: 35px;
+    margin-left: 2.5vw;
+}
+
+#logo{
+    font-size: 75px;
+    color: var(--theme_color);
+    margin: 15;
+    display: block;
+    font-weight: bold;
+    font-family: calibri;
+    color:rgb(0, 177, 201);
+    margin-right: 2.5vw;
+
+}
+
+#form{
+    margin-top: 20px;
+    background-color: rgba(128, 0, 128, 0.096);
+    padding:50px 20px;
+    border-radius:10px;
+    display:flex;
+    flex-direction: column;
+}
+
+#name{
+    display: flex;
+}
+
+#pass{
+    display: flex;
+}
+
+.inp{
+    width: 90%;
+    margin:auto;
+    margin:20px 20px;
+    border:none;
+    height:35px;
+    border-radius:3px;
+    padding: 5px 30px;
+    font-size: 20px; 
+    letter-spacing: 2px;
+}
+.inp:focus{
+    outline:none;
+}
+#first #second #pwd #confirm{
+    width: 46%;
+}
+
+#btn{
+    width:96%;
+    background-color: purple;
+    color:white;
+    font-family: cursive;
+    height: 50px;
+    font-size: 25px;
+    border-radius:50px;
+}
+
+#btn:hover {
+    cursor: pointer;
+}

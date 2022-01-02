@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div id="page">
+
+        <div id="header">
+            <div id="signup">Sign Up</div>
+            <div id="logo">Library Manager</div>
+        </div>
+
+        <div id="msg" style="
+        font-size: 20px;
+        font-family: sans-serif;
+        border-radius:5px;
+        padding:5px 15px;
+        display: none;
+
+        ">messages</div>
+
+        <div id="form">
+
+            <div id="name">
+                <input type="text" class="inp" placeholder="First Name" id="first" maxlength="20">
+            <input type="text" class="inp" placeholder="Last Name" id="last" maxlength="20">
+            </div>
+            
+            <input type="email"autocomplete="off" class="inp" placeholder="Email" id="email">
+            <input type="text"autocomplete="off" class="inp" placeholder="Phone Number" id="phone">
+            <input type="text" autocomplete="off" class="inp" placeholder="User Name" spellcheck="false" id="username">
+
+            <div id="pass">
+                <input type="password" class="inp" placeholder="Password" id="pwd">
+            <input type="password" class="inp" placeholder="Confirm Password" id="confirm">
+            </div>
+
+            <input type="button" value="Sign Up" id="btn" class = "inp" onclick="check()">
+            
+            
+
+        </div>
+
+    </div>
+
+
+</body>
+<script src="script.js">
+
+</script>
+</html>
