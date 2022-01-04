@@ -31,47 +31,57 @@
             </div>
 
             <div id="req_nav">
-                <div id="q_nav" class="tabs" onclick="switch_tab('q')" style="border-color: rgb(255, 108, 55);">Queries</div>
-                <div id="h_nav" class="tabs" onclick="switch_tab('h')">Headers</div>
-                <div id="b_nav" class="tabs" onclick="switch_tab('b')">Body</div>
+                <div id="q_nav" class="tabs" onclick="switch_tab('q')" style="border-color: rgb(255, 108, 55);">Queries
+                </div>
+                <div id="h_nav" class="tabs" onclick="switch_tab('h')" style="display: none">Headers</div>
+                <div id="b_nav" class="tabs" onclick="switch_tab('b')" style="display:none">Body</div>
             </div>
 
             <div class="windows" id="queries">
                 <div class="query_entry">
-                    <input type="text" class="query_name" placeholder="Query Name"><input type="text"
-                        class="query_value" placeholder="Query Value"> <input type="button" class="del_query" value="">
+                    <input type="text" class="query_name" placeholder="Query Name">
+                    <input type="text" class="query_value" placeholder="Query Value">
+                    <input type="button" class="add_query" value="ADD" onclick="add_query_entry()">
+
                 </div>
 
-                <input type="button" value="+" id="new_query_entry" onclick="add_query_entry()">
-
+                <div id="query_list">
+                    
+                </div>
 
             </div>
+
+
             <div class="windows" id="headers">
 
                 <div class="header_entry">
-                    <input type="text" class="header_name" placeholder="Header Name"><input type="text"
-                        class="header_value" placeholder="Header Value"> <input type="button" class="del_header" value="">
+                    <input type="text" class="header_name" placeholder="Header Name">
+                    <input type="text"class="header_value" placeholder="Header Value">
+                    <input type="button" class="add_header"value="ADD" onclick="add_header_entry();">
                 </div>
 
-                <input type="button" value="+" id="new_header_entry" onclick="add_header_entry()">
+
+                <div id="header_list">
+
+                </div>
 
             </div>
 
 
             <div class="windows" id="body">
-                <textarea name="" id="body_entry" rows="" cols="30" rows="10" spellcheck="false" placeholder="Body Content" ></textarea>
+                <textarea name="" id="body_entry" rows="" cols="30" rows="10" spellcheck="false"
+                    placeholder="Body Content"></textarea>
             </div>
         </div>
 
 
 
         <div id="response_area">
-            
+
             <div id="response_title" class="tabs">Response</div>
             <div id="response">
-                Response
             </div>
-            
+
         </div>
 
 

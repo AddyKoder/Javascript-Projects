@@ -132,6 +132,7 @@ header{
 .query_entry{
     display: flex;
     justify-content: space-between;
+    margin: 8px 0px;
 }
 
 .query_name{
@@ -141,14 +142,15 @@ header{
     padding: 5px 10px;
 }
 .query_value{
-    width: 70%;
+    width: 66%;
     height:25px;
     font-size: 18px;
     padding: 5px 10px;
 }
 
 .del_query{
-    width: 39px;
+    width: 25px;
+    height: 25px;
     border-radius: 500px;
     border:none;
     background-color: red;
@@ -169,6 +171,8 @@ header{
 .header_entry{
     display: flex;
     justify-content: space-between;
+    margin: 8px 0px;
+
 }
 
 .header_name{
@@ -178,14 +182,15 @@ header{
     padding: 5px 10px;
 }
 .header_value{
-    width: 70%;
+    width: 66%;
     height:25px;
     font-size: 18px;
     padding: 5px 10px;
 }
 
 .del_header{
-    width: 39px;
+    width:25px;
+    height:25px;
     border-radius: 500px;
     border:none;
     background-color: red;
@@ -211,7 +216,7 @@ input[type="button"]:hover{
 
 #body_entry{
     resize: none;
-    width:60vw;
+    width:58vw;
     height:25vh;
     font-size: 20px;
     padding: 15px 25px;
@@ -234,3 +239,84 @@ input[type="button"]:hover{
     padding:15px 25px;
     overflow: auto;
 }
+
+#query_list{
+    height:23vh;
+    margin:20px 0px;
+    overflow:auto;;
+}
+.query_listing{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0px 0px;
+    background-color: rgba(128, 128, 128, 0.144);
+    padding:0px 20px;
+    margin: 5px 0px;
+
+}
+
+.query_name_listing{
+    width:15%;
+    height: 35px;
+}
+.query_value_listing{
+    width:70%;
+}
+.del_query{
+    
+}
+
+.add_query{
+    width: 8%;
+    color:white;
+    background-color:rgb(0, 102, 255);
+    border:none;
+}
+
+
+
+
+
+
+
+#header_list{
+    height:23vh;
+    margin:20px 0px;
+    overflow:auto;;
+}
+.header_listing{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding:0px 20px;
+    justify-content: space-between;
+    margin:0px 0px;
+    background-color: rgba(128, 128, 128, 0.144);
+    margin: 5px 0px;
+
+}
+
+.header_name_listing{
+    width:15%;
+    height: 35px;
+}
+.header_value_listing{
+    width:70%;
+}
+.del_header{
+    
+}
+
+.add_header{
+    width: 8%;
+    color:white;
+    background-color:rgb(0, 102, 255);
+    border:none;
+}
+
+#query_list, #header_list{
+    font-size: 20px;
+    font-family: cursive;
+}
+
