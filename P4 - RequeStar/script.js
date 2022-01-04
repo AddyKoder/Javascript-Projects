@@ -45,7 +45,7 @@ function send_request() {
     
 
     if(request_method.value == 'get'){
-        post_req(url)}
+        get_req(url)}
 
     else{
         let obj = {
